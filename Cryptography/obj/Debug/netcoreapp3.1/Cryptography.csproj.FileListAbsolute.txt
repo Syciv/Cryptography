@@ -1,0 +1,13 @@
+C:\Users\EEEOne\source\repos\Cryptography\Cryptography\bin\Debug\netcoreapp3.1\Cryptography.exe
+C:\Users\EEEOne\source\repos\Cryptography\Cryptography\bin\Debug\netcoreapp3.1\Cryptography.deps.json
+C:\Users\EEEOne\source\repos\Cryptography\Cryptography\bin\Debug\netcoreapp3.1\Cryptography.runtimeconfig.json
+C:\Users\EEEOne\source\repos\Cryptography\Cryptography\bin\Debug\netcoreapp3.1\Cryptography.runtimeconfig.dev.json
+C:\Users\EEEOne\source\repos\Cryptography\Cryptography\bin\Debug\netcoreapp3.1\Cryptography.dll
+C:\Users\EEEOne\source\repos\Cryptography\Cryptography\bin\Debug\netcoreapp3.1\Cryptography.pdb
+C:\Users\EEEOne\source\repos\Cryptography\Cryptography\obj\Debug\netcoreapp3.1\Cryptography.csproj.AssemblyReference.cache
+C:\Users\EEEOne\source\repos\Cryptography\Cryptography\obj\Debug\netcoreapp3.1\Cryptography.AssemblyInfoInputs.cache
+C:\Users\EEEOne\source\repos\Cryptography\Cryptography\obj\Debug\netcoreapp3.1\Cryptography.AssemblyInfo.cs
+C:\Users\EEEOne\source\repos\Cryptography\Cryptography\obj\Debug\netcoreapp3.1\Cryptography.csproj.CoreCompileInputs.cache
+C:\Users\EEEOne\source\repos\Cryptography\Cryptography\obj\Debug\netcoreapp3.1\Cryptography.dll
+C:\Users\EEEOne\source\repos\Cryptography\Cryptography\obj\Debug\netcoreapp3.1\Cryptography.pdb
+C:\Users\EEEOne\source\repos\Cryptography\Cryptography\obj\Debug\netcoreapp3.1\Cryptography.genruntimeconfig.cache
