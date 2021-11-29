@@ -38,7 +38,7 @@ namespace CryptographyUnitTest
             ECPoint expected = new ECPoint(23,37,1,3,41);
             var ecurve = new EllipticCurve(1,3,41);
             var p = new ECPoint(1, 28, 1, 3, 41);
-            ECPoint result = p.Mult(20);
+            ECPoint result = p*20;
             Console.WriteLine("({0}, {1})",result.x,result.y);
             // Assert.AreEqual(expected.x, result.x, "Не равны");
         }
@@ -56,7 +56,7 @@ namespace CryptographyUnitTest
                 var p2 = ecurve.GetRandomPoint();
 
 
-                var p3 = p1.Add(p2);
+                var p3 = p1+p2;
                 if (!ecurve.Contains(p3.x, p3.y))
                 {
                     //Console.WriteLine("({0}, {1})", p1.x, p1.y);
@@ -77,7 +77,7 @@ namespace CryptographyUnitTest
             ECPoint expected = new ECPoint(23, 37, 1, 3, 41);
             var ecurve = new EllipticCurve(1, 3, 41);
             var p = new ECPoint(11, 19, 1, 3, 41);
-            ECPoint result = p.Sub(new ECPoint(5, 25, 1, 3, 41));
+            ECPoint result = p-(new ECPoint(5, 25, 1, 3, 41));
             Console.WriteLine("({0}, {1})", result.x, result.y);
             // Assert.AreEqual(expected.x, result.x, "Не равны");
         }

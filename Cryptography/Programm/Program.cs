@@ -11,17 +11,17 @@ namespace Cryptography.Programm
     class Program
     {
         static void Output16(byte[] text)
-        {   
-            for(int i=0; i < text.Length; i++)
+        {
+            for (int i = 0; i < text.Length; i++)
             {
-                Console.Write(Convert.ToString(text[i],16) + " ");
+                Console.Write(Convert.ToString(text[i], 16) + " ");
             }
             Console.WriteLine();
         }
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Выберите действие:\n 1. Шифрование;\n 2. Электронная подпись;\n 3. ГПСЧ; ");
+            Console.WriteLine("Выберите действие:\n 1. Шифрование;\n 2. Электронная подпись;\n 3. ГПСЧ;\n 4. Хэш; ");
             int act = Convert.ToInt32(Console.ReadLine());
 
             if (act == 1)
@@ -90,7 +90,7 @@ namespace Cryptography.Programm
                 (r, s) = signer.CreateSignature(Message, "ELGAMAL");
 
                 Console.WriteLine("\nИсходный текст:\n" + Encoding.Default.GetString(Message));
-                Console.WriteLine("Подпись: {0}, {1}", r, s);    
+                Console.WriteLine("Подпись: {0}, {1}", r, s);
 
                 Console.WriteLine();
                 bool result = signer.CheckSignature(Message, r, s, "ELGAMAL");
@@ -131,7 +131,21 @@ namespace Cryptography.Programm
                     Console.WriteLine("{0}: {1}", i, Nums[i]);
                 }
             }
+            if (act == 4)
+            {
+                Console.WriteLine("Хэш Стрибог: ");
+                Hasher hasher = new Hasher();
 
+                byte[] message = { 0xfb, 0xe2,0xe5,0xf0,0xee,0xe3,0xc8,0x20,0xfb,0xea,0xfa,0xeb,0xef,0x20,0xff,0xfb,0xf0,0xe1,0xe0,0xf0,0xf5,0x20,0xe0,0xed,0x20,
+                0xe8,0xec,0xe0, 0xeb, 0xe5, 0xf0, 0xf2, 0xf1, 0x20,0xff,0xf0,0xee,0xec,0x20,0xf1,0x20,0xfa,0xf2,0xfe,0xe5,0xe2,0x20,0x2c, 0xe8, 0xf6, 0xf3,
+                0xed, 0xe2, 0x20, 0xe8, 0xe6, 0xee, 0xe1, 0xe8, 0xf0,0xf2,0xd1,0x20,0x2c, 0xe8, 0xf0, 0xf2,  0xe5, 0xe2, 0x20, 0xe5, 0xd1};
+                Console.WriteLine("Исходное сообщение: ");
+                Output16(message);
+                var result = hasher.GetHash(message, "STRIBOG");
+                Console.WriteLine("Хэш сообщения: ");
+                Output16(result);
+
+            }
         }
     }
 }
