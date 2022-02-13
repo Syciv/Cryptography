@@ -26,7 +26,7 @@ namespace Cryptography.Programm
 
             if (act == 1)
             {
-                Console.WriteLine("Выберите алгоритм:\n 1. Фейстель; 2. Магма; 3. Эль-Гамаль; 4. На основе Эллиптических кривых; ");
+                Console.WriteLine("Выберите алгоритм:\n 1. Фейстель; 2. Магма; 3. Эль-Гамаль; 4. На основе Эллиптических кривых; 5. AES; ");
                 int alg = Convert.ToInt32(Console.ReadLine());
                 string currentCipher;
                 switch (alg)
@@ -42,6 +42,9 @@ namespace Cryptography.Programm
                         break;
                     case 4:
                         currentCipher = "ELLIPTICCURVE";
+                        break;
+                    case 5:
+                        currentCipher = "AES";
                         break;
                     default:
                         return;

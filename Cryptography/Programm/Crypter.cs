@@ -53,6 +53,9 @@ namespace Cryptography.Programm
                     var dict = GetDict(text);
                     cryptedText = EllipticCurveCrypt.Encrypt(text, G, Pb, ecurve, dict);
                     break;
+                case "AES":
+                    cryptedText = AES.Encrypt(text);
+                    break;
                 default:
                     throw new Exception("Нет такого алгоритма");
             }
@@ -80,6 +83,9 @@ namespace Cryptography.Programm
                     (int nb, ECPoint G, ECPoint Pb, EllipticCurve ecurve) = EllipticCurveCrypt.GenerateKey();
                     var dict = GetDict(text);
                     cryptedText = EllipticCurveCrypt.Decrypt(cryptedtext, nb, ecurve, dict);
+                    break;
+                case "AES":
+                    cryptedText = AES.Decrypt(text);
                     break;
                 default:
                     throw new Exception("Нет такого алгоритма");

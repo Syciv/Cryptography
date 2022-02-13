@@ -157,7 +157,7 @@ namespace Cryptography.Algorithms.Hash
         public static byte[] Stribog_E(byte[] K, byte[] m)
         {
             var s = Stribog_X(K, m);
-            for(int i = 0; i < 12; i++)
+            for (int i = 0; i < 12; i++)
             {
                 s = Stribog_S(s);
                 s = Stribog_P(s);
@@ -294,6 +294,12 @@ namespace Cryptography.Algorithms.Hash
                 h = Stribog_g(N, m, h);
                 N = SummMod512(N, byte512);
                 E = SummMod512(E, m);
+                Console.WriteLine("E: ");
+                for (int i = 0; i < 64; i++)
+                {
+                    Console.Write(Convert.ToString(E[i], 16));
+                }
+                Console.WriteLine();
                 // Обрезаем 512 бит с конца
                 byte[] M2 = new byte[M1.Length - 64];
                 for (int k = 0; k < M2.Length; k++)
@@ -335,6 +341,7 @@ namespace Cryptography.Algorithms.Hash
             N = SummMod512(N, M_length);
             E = SummMod512(E, m);
            
+
             h = Stribog_g(zero, N, h);
             h = Stribog_g(zero, E, h);
             return h;
