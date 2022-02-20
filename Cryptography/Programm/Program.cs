@@ -61,26 +61,25 @@ namespace Cryptography.Programm
 
                 Crypter crypter = new Crypter();
 
-                byte[] Text = Encoding.Default.GetBytes("vsem priveet vsem privet vsem privet");
-                // byte[] Text = Encoding.Default.GetBytes("Всем привет Всем привет Всем привет Всем привет Всем привет Всем привет Всем привет Всем привет");
-                // byte[] Text = { (byte)5 };
+                //byte[] Text = Encoding.Default.GetBytes("vsem priveet vsem privet vsem privet");
+                byte[] Text = Encoding.Default.GetBytes("Всем привет Всем привет Всем привет Всем привет Всем привет Всем привет Всем привет Всем привет");
 
-                //Console.WriteLine("Исходный текст:\n" + Encoding.Default.GetString(Text));
-                Console.WriteLine("Исходный текст:\n" );
+                Console.WriteLine("Исходный текст:\n" + Encoding.Default.GetString(Text));
+                //Console.WriteLine("Исходный текст:\n" );
                 //Output16(Text);
-                Output10(Text);
+                //Output10(Text);
                 byte[] CryptedText = crypter.Encrypt(Text, currentCipher);
 
-                // Console.WriteLine("\nЗашифрованный текст:\n" + Encoding.Default.GetString(CryptedText));
-                Console.WriteLine("\nЗашифрованный текст:\n");
+                Console.WriteLine("\nЗашифрованный текст:\n" + Encoding.Default.GetString(CryptedText));
+                //Console.WriteLine("\nЗашифрованный текст:\n");
                 //Output16(CryptedText);
-                Output10(CryptedText);
+                //Output10(CryptedText);
 
                 byte[] DecryptedText = crypter.Decrypt(CryptedText, currentCipher, Text);
-                // Console.WriteLine("\nРасшифрованный текст:\n" + Encoding.Default.GetString(DecryptedText));
-                Console.WriteLine("\nРасшифрованный текст:\n");
+                Console.WriteLine("\nРасшифрованный текст:\n" + Encoding.Default.GetString(DecryptedText));
+                //Console.WriteLine("\nРасшифрованный текст:\n");
                 //Output16(DecryptedText);
-                Output10(DecryptedText);
+                //Output10(DecryptedText);
 
             }
             if (act == 2)
