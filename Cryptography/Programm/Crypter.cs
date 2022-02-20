@@ -85,7 +85,7 @@ namespace Cryptography.Programm
                     cryptedText = EllipticCurveCrypt.Decrypt(cryptedtext, nb, ecurve, dict);
                     break;
                 case "AES":
-                    cryptedText = AES.Decrypt(text);
+                    cryptedText = AES.Decrypt(cryptedtext);
                     break;
                 default:
                     throw new Exception("Нет такого алгоритма");

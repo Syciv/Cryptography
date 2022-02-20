@@ -48,7 +48,7 @@ namespace CryptographyUnitTest
             };
             Output16(bytes);
             byte[] expected = {0x2a, 0x19, 0x6f, 0x34};
-            byte[,] result = AES.ShiftRows(bytes, false);
+            byte[,] result = AES.ShiftRows(bytes, true);
             Output16(bytes);
             Output16(result);
             //Assert.AreEqual(expected, result, "Не равны");

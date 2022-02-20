@@ -19,6 +19,15 @@ namespace Cryptography.Programm
             Console.WriteLine();
         }
 
+        static void Output10(byte[] text)
+        {
+            for (int i = 0; i < text.Length; i++)
+            {
+                Console.Write(Convert.ToString(text[i], 10) + " ");
+            }
+            Console.WriteLine();
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Выберите действие:\n 1. Шифрование;\n 2. Электронная подпись;\n 3. ГПСЧ;\n 4. Хэш; ");
@@ -52,19 +61,26 @@ namespace Cryptography.Programm
 
                 Crypter crypter = new Crypter();
 
-                byte[] Text = Encoding.Default.GetBytes("Всем привет Всем привет Всем привет Всем привет Всем привет Всем привет Всем привет Всем привет");
+                byte[] Text = Encoding.Default.GetBytes("vsem priveet vsem privet vsem privet");
+                // byte[] Text = Encoding.Default.GetBytes("Всем привет Всем привет Всем привет Всем привет Всем привет Всем привет Всем привет Всем привет");
                 // byte[] Text = { (byte)5 };
 
-                Console.WriteLine("Исходный текст:\n" + Encoding.Default.GetString(Text));
-                // Output16(Text);
+                //Console.WriteLine("Исходный текст:\n" + Encoding.Default.GetString(Text));
+                Console.WriteLine("Исходный текст:\n" );
+                //Output16(Text);
+                Output10(Text);
                 byte[] CryptedText = crypter.Encrypt(Text, currentCipher);
 
-                Console.WriteLine("\nЗашифрованный текст:\n" + Encoding.Default.GetString(CryptedText));
-                // Output16(CryptedText);
+                // Console.WriteLine("\nЗашифрованный текст:\n" + Encoding.Default.GetString(CryptedText));
+                Console.WriteLine("\nЗашифрованный текст:\n");
+                //Output16(CryptedText);
+                Output10(CryptedText);
 
                 byte[] DecryptedText = crypter.Decrypt(CryptedText, currentCipher, Text);
-                Console.WriteLine("\nРасшифрованный текст:\n" + Encoding.Default.GetString(DecryptedText));
-                // Output16(DecryptedText);
+                // Console.WriteLine("\nРасшифрованный текст:\n" + Encoding.Default.GetString(DecryptedText));
+                Console.WriteLine("\nРасшифрованный текст:\n");
+                //Output16(DecryptedText);
+                Output10(DecryptedText);
 
             }
             if (act == 2)

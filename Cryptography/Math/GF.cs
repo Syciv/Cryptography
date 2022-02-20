@@ -6,51 +6,24 @@ namespace Cryptography.Math
 {
     public static class GF
     {
-
-        public static byte Offset(byte num)
+        public static byte Mult(byte a, byte b)
         {
-            return (byte)((num << 1) + (num & 0x80) / 0x80);
-        }
-
-        public static byte MultBy02(byte num)
-        {
-            byte result;
-            if(num < 0x80)
+            byte p = 0;
+            byte counter;
+            byte h_bit;
+            for (counter = 0; counter < 8; counter++)
             {
-                result = (byte)((num << 1));
+                if ((b & 1) == 1)
+                {
+                    p ^= a;
+                }
+                h_bit = (byte)(a & 0x80);
+                a <<= 1;
+                if (h_bit == 1)
+                    a ^= 0x1b; /* x^8 + x^4 + x^3 + x + 1 */
+                b >>= 1;
             }
-            else
-            {
-                result = (byte)((num << 1));
-                result ^= 0x1b;
-            }
-
-            return result;
-        }
-
-        public static byte MultBy03(byte num)
-        {
-            return (byte)(MultBy02(num) ^ num);
-        }
-
-        public static byte MultBy09(byte num)
-        {
-            return (byte)(MultBy02(MultBy02(MultBy02(num))) ^ num);
-        }
-
-        public static byte MultBy0b(byte num)
-        {
-            return (byte)(MultBy02(MultBy02(MultBy02(num))) ^ MultBy02(num) ^ num);
-        }
-
-        public static byte MultBy0d(byte num)
-        {
-            return (byte)((MultBy02(MultBy02(MultBy02(num)))^ (MultBy02(MultBy02(num)) ^ num)));
-        }
-
-        public static byte MultBy0e(byte num)
-        {
-            return (byte)(MultBy02(MultBy02(MultBy02(num))) ^ MultBy02(MultBy02(num)) ^ MultBy02(num));
+            return p;
         }
     }
 }
