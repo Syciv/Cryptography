@@ -45,8 +45,8 @@ namespace Cryptography.Algorithms.Crypt
             {
                 a = text[i];
                 b = text[i + 1];
-                a = PrimeNumbers.ModularPower(a, x, p);
-                a = PrimeNumbers.Reverse(a, p);
+                a = PrimeNumbers.ModularPower(a, p-1-x, p);
+                //a = PrimeNumbers.Reverse(a, p);
                 m = PrimeNumbers.Module(b * a, p);          
                 cryptedText[j] = (byte)m;
             }

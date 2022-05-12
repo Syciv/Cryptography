@@ -62,7 +62,7 @@ namespace Cryptography.Programm
                 Crypter crypter = new Crypter();
 
                 //byte[] Text = Encoding.Default.GetBytes("vsem priveet vsem privet vsem privet");
-                byte[] Text = Encoding.Default.GetBytes("Всем привет Всем привет Всем привет Всем привет Всем привет Всем привет Всем привет Всем привет");
+                byte[] Text = Encoding.Default.GetBytes("100_75_(2187, 3, 2969)_20");
 
                 Console.WriteLine("Исходный текст:\n" + Encoding.Default.GetString(Text));
                 //Console.WriteLine("Исходный текст:\n" );
@@ -72,7 +72,7 @@ namespace Cryptography.Programm
 
                 Console.WriteLine("\nЗашифрованный текст:\n" + Encoding.Default.GetString(CryptedText));
                 //Console.WriteLine("\nЗашифрованный текст:\n");
-                //Output16(CryptedText);
+                Output16(CryptedText);
                 //Output10(CryptedText);
 
                 byte[] DecryptedText = crypter.Decrypt(CryptedText, currentCipher, Text);
